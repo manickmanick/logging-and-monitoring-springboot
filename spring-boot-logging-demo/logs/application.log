@@ -1,21 +1,27 @@
-2026-09-14 17:06:53.847 INFO  [main] c.e.l.SpringBootLoggingDemoApplication - Starting SpringBootLoggingDemoApplication using Java 26.0.1 with PID 10624 (C:\Users\User\Documents\java_project\logging_monitoring\spring-boot-logging-demo\target\classes started by User in C:\Users\User\Documents\java_project\logging_monitoring\spring-boot-logging-demo)
-2026-09-14 17:06:53.849 DEBUG [main] c.e.l.SpringBootLoggingDemoApplication - Running with Spring Boot v4.1.1, Spring v7.0.9
-2026-09-14 17:06:53.850 INFO  [main] c.e.l.SpringBootLoggingDemoApplication - No active profile set, falling back to 1 default profile: "default"
-2026-09-14 17:06:54.887 INFO  [main] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
-2026-09-14 17:06:54.899 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
-2026-09-14 17:06:54.901 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-09-14 17:06:54.902 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.24]
-2026-09-14 17:06:54.970 INFO  [main] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1063 ms
-2026-09-14 17:06:55.308 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8082"]
-2026-09-14 17:06:55.331 INFO  [main] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path '/'
-2026-09-14 17:06:55.337 INFO  [main] c.e.l.SpringBootLoggingDemoApplication - Started SpringBootLoggingDemoApplication in 2.09 seconds (process running for 2.664)
-2026-09-14 17:07:03.216 INFO  [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-09-14 17:07:03.217 INFO  [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2026-09-14 17:07:03.219 INFO  [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
-2026-09-14 17:07:03.353 INFO  [http-nio-8082-exec-1] c.e.l.controller.UserController - Received request to get User. name=manick
-2026-09-14 17:07:03.359 DEBUG [http-nio-8082-exec-1] c.e.loggingdemo.service.UserService - DEBUG message
-2026-09-14 17:07:03.361 INFO  [http-nio-8082-exec-1] c.e.loggingdemo.service.UserService - INFO message
-2026-09-14 17:07:03.364 WARN  [http-nio-8082-exec-1] c.e.loggingdemo.service.UserService - WARN message
-2026-09-14 17:07:03.371 ERROR [http-nio-8082-exec-1] c.e.loggingdemo.service.UserService - ERROR message
-2026-09-14 17:11:56.939 INFO  [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2026-09-14 17:11:56.947 INFO  [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-09-15 12:03:23.951 INFO  [main] [correlationId=] c.e.l.SpringBootLoggingDemoApplication - Starting SpringBootLoggingDemoApplication using Java 26.0.1 with PID 17616 (C:\Users\User\Documents\java_project\logging_monitoring\spring-boot-logging-demo\target\classes started by User in C:\Users\User\Documents\java_project\logging_monitoring\spring-boot-logging-demo)
+2026-09-15 12:03:23.955 DEBUG [main] [correlationId=] c.e.l.SpringBootLoggingDemoApplication - Running with Spring Boot v4.1.1, Spring v7.0.9
+2026-09-15 12:03:23.955 INFO  [main] [correlationId=] c.e.l.SpringBootLoggingDemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-09-15 12:03:24.843 INFO  [main] [correlationId=] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
+2026-09-15 12:03:24.854 INFO  [main] [correlationId=] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+2026-09-15 12:03:24.856 INFO  [main] [correlationId=] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-15 12:03:24.856 INFO  [main] [correlationId=] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-15 12:03:24.902 INFO  [main] [correlationId=] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 886 ms
+2026-09-15 12:03:24.933 DEBUG [main] [correlationId=] c.e.l.filter.CorrelationIdFilter - Filter 'correlationIdFilter' configured for use
+2026-09-15 12:03:25.199 INFO  [main] [correlationId=] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8082"]
+2026-09-15 12:03:25.221 INFO  [main] [correlationId=] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path '/'
+2026-09-15 12:03:25.225 INFO  [main] [correlationId=] c.e.l.SpringBootLoggingDemoApplication - Started SpringBootLoggingDemoApplication in 1.924 seconds (process running for 2.571)
+2026-09-15 12:03:39.329 INFO  [http-nio-8082-exec-1] [correlationId=] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-15 12:03:39.330 INFO  [http-nio-8082-exec-1] [correlationId=] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-09-15 12:03:39.331 INFO  [http-nio-8082-exec-1] [correlationId=] o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2026-09-15 12:03:39.365 INFO  [http-nio-8082-exec-1] [correlationId=6ba28d5f-7d62-4d3d-8d2a-b0524766660d] c.e.l.controller.UserController - Received request to get User. name=manick
+2026-09-15 12:03:39.366 DEBUG [http-nio-8082-exec-1] [correlationId=6ba28d5f-7d62-4d3d-8d2a-b0524766660d] c.e.loggingdemo.service.UserService - DEBUG message
+2026-09-15 12:03:39.366 INFO  [http-nio-8082-exec-1] [correlationId=6ba28d5f-7d62-4d3d-8d2a-b0524766660d] c.e.loggingdemo.service.UserService - INFO message
+2026-09-15 12:03:39.366 WARN  [http-nio-8082-exec-1] [correlationId=6ba28d5f-7d62-4d3d-8d2a-b0524766660d] c.e.loggingdemo.service.UserService - WARN message
+2026-09-15 12:03:39.366 ERROR [http-nio-8082-exec-1] [correlationId=6ba28d5f-7d62-4d3d-8d2a-b0524766660d] c.e.loggingdemo.service.UserService - ERROR message
+2026-09-15 12:04:01.544 INFO  [http-nio-8082-exec-3] [correlationId=7a710117-51fa-4281-8f40-198d2a84a714] c.e.l.controller.UserController - Received request to get User. name=manick
+2026-09-15 12:04:01.545 DEBUG [http-nio-8082-exec-3] [correlationId=7a710117-51fa-4281-8f40-198d2a84a714] c.e.loggingdemo.service.UserService - DEBUG message
+2026-09-15 12:04:01.545 INFO  [http-nio-8082-exec-3] [correlationId=7a710117-51fa-4281-8f40-198d2a84a714] c.e.loggingdemo.service.UserService - INFO message
+2026-09-15 12:04:01.545 WARN  [http-nio-8082-exec-3] [correlationId=7a710117-51fa-4281-8f40-198d2a84a714] c.e.loggingdemo.service.UserService - WARN message
+2026-09-15 12:04:01.546 ERROR [http-nio-8082-exec-3] [correlationId=7a710117-51fa-4281-8f40-198d2a84a714] c.e.loggingdemo.service.UserService - ERROR message
+2026-09-15 12:23:42.715 INFO  [SpringApplicationShutdownHook] [correlationId=] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-15 12:23:42.722 INFO  [tomcat-shutdown] [correlationId=] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
