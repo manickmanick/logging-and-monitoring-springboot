@@ -16,15 +16,20 @@ public class PaymentController {
 
     @PostMapping
     public String processPayment(
-            @RequestParam String paymentMethod) {
+            @RequestParam String paymentMethod,
+            @RequestParam String paymentStatus) {
 
         Counter paymentCounter = Counter.builder("payments.processed")
                 .description("Number of payments processed")
                 .tag("paymentMethod", paymentMethod)
+                .tag("paymentStatus", paymentStatus)
                 .register(meterRegistry);
 
         paymentCounter.increment();
 
-        return "Payment processed using " + paymentMethod;
+        return "Payment processed using "
+                + paymentMethod
+                + " with status "
+                + paymentStatus;
     }
 }
