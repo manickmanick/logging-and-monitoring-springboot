@@ -1,41 +1,30 @@
 package com.example.loggingdemo.controller;
 
-import io.micrometer.core.instrument.Gauge;
+import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.MeterRegistry;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.concurrent.atomic.AtomicInteger;
 
 @RestController
 @RequestMapping("/orders")
 public class OrderController {
 
-    private final AtomicInteger pendingOrders = new AtomicInteger(0);
+    private final MeterRegistry meterRegistry;
 
     public OrderController(MeterRegistry meterRegistry) {
-
-        Gauge.builder(
-                        "orders.pending",
-                        pendingOrders,
-                        AtomicInteger::get
-                )
-                .description("Number of pending orders")
-                .register(meterRegistry);
+        this.meterRegistry = meterRegistry;
     }
 
     @PostMapping
-    public String createOrder() {
+    public String createOrder(
+            @RequestParam String orderType) {
 
-        pendingOrders.incrementAndGet();
+        Counter orderCounter = Counter.builder("orders.created")
+                .description("Number of orders created")
+                .tag("orderType", orderType)
+                .register(meterRegistry);
 
-        return "Order created";
-    }
+        orderCounter.increment();
 
-    @PostMapping("/complete")
-    public String completeOrder() {
-
-        pendingOrders.decrementAndGet();
-
-        return "Order completed";
+        return "Order created with type " + orderType;
     }
 }

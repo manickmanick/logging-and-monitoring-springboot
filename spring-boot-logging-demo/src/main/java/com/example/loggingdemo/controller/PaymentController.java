@@ -1,36 +1,30 @@
 package com.example.loggingdemo.controller;
 
+import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.MeterRegistry;
-import io.micrometer.core.instrument.Timer;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/payment")
+@RequestMapping("/payments")
 public class PaymentController {
 
-    private final Timer paymentTimer;
+    private final MeterRegistry meterRegistry;
 
     public PaymentController(MeterRegistry meterRegistry) {
-
-        paymentTimer = Timer.builder("payment.processing.time")
-                .description("Time taken to process payment")
-                .register(meterRegistry);
+        this.meterRegistry = meterRegistry;
     }
 
     @PostMapping
-    public String processPayment() {
+    public String processPayment(
+            @RequestParam String paymentMethod) {
 
-        paymentTimer.record(() -> {
+        Counter paymentCounter = Counter.builder("payments.processed")
+                .description("Number of payments processed")
+                .tag("paymentMethod", paymentMethod)
+                .register(meterRegistry);
 
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-                throw new RuntimeException(e);
-            }
+        paymentCounter.increment();
 
-        });
-
-        return "Payment processed";
+        return "Payment processed using " + paymentMethod;
     }
 }
